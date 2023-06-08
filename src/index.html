@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Homework 10</title>
+    <link
+      href="https://unpkg.com/slim-select@latest/dist/slimselect.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
   </head>
+  <style>
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 5px solid #000;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .cat-info {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+    .cat-img {
+      width: 500px;
+      height: 360px;
+    }
+    .cat-descr {
+      width: 600px;
+      font-size: 20px;
+    }
+    .cat-title {
+      font-size: 32px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <select class="breed-select hidden"></select>
+    <span class="loader"></span>
+    <p class="error hidden">
+      Oops! Something went wrong! Try reloading the page!
+    </p>
+    <div class="cat-info"></div>
+
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
