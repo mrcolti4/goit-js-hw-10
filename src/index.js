@@ -2,6 +2,7 @@ import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
 import { refs } from './js/refs.js';
 import { infoMessage } from './js/infoMessage';
 import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const hideCatInfo = () => {
@@ -29,6 +30,7 @@ const loadBreeds = () => {
       loadMessage.hideMessage();
     })
     .catch(error => {
+      loadMessage.hideMessage();
       Notify.failure(`${errorMessage.message}`);
     });
 };
